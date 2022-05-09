@@ -1,0 +1,148 @@
+/* Basic Reset */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Lucida Console', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    background: linear-gradient(to right, #3f4c6b, #606c88);
+}
+
+/* Display */
+
+.calculator {
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 3rem -.5rem rgba(0, 0, 0, 0.6);
+    width: 40rem;
+    padding: .3rem;
+}
+
+.calculator-display {
+    background-color: white;
+    border-radius: inherit;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.calculator-display h1 {
+    padding: 3rem 1rem;
+    font-size: 4.5rem;
+    font-weight: 300;
+    overflow-x: auto;
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+    width: .6rem;
+    height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 1rem;
+    height: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Buttons */
+
+button {
+    padding: 1rem;
+    min-height: 5rem;
+    font-size: 2.4rem;
+    font-weight: 100;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    filter: brightness(105%);
+}
+
+button:active {
+    transform: translateY(.1rem);
+    box-shadow: 0 .2rem .7rem -.5rem rgba(0, 0, 0, 0.6);
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.operator {
+    background-color: #c4c4c4;
+/*     background-color: #e6e3e3; */
+    color: white;
+    font-size: 3rem;
+}
+
+.clear {
+    background-color: rgb(255, 40, 40);
+    color: white;
+}
+
+/* .clear:active {
+    animation: rotate .2s;
+    text-shadow: 0.5rem 0 1rem rgba(15, 10, 10, 0.2);
+}
+
+@keyframes rotate {
+    0% {
+        opacity: 1;
+        transform: rotate(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+} */
+
+.clear:hover {
+    filter: brightness(95%);
+}
+
+.equal-sign {
+    grid-column: -2;
+    grid-row: 2 / span 4;
+    background-color: rgb(13, 206, 87);
+}
+
+/* Media Queriy : Large Smartphone Vertical */
+
+@media screen and (max-width: 60rem) {
+    .calculator {
+        width: 95%;
+    }
+}
